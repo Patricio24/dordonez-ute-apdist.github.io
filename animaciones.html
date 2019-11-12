@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html>
+	<head>
+		<title>ANIMACIONES CSS3</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		body {
+		padding: 10px 0 0 10px;
+		}
+		#contenedor {margin: 30px auto; width:960px;}
+		a {
+		display:inline-block;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		width:100px;
+		height:100px;
+		-webkit-border-radius:50px;
+		-moz-border-radius:50px;
+		border-radius:50px;
+
+		background-image:url(circulo.png);
+		background-repeat:no-repeat;
+		background-origin:border-box;
+		background-position:50% 50%;
+
+		border-width:50px;
+		border-color:rgba(0,0,0,0);
+
+		-webkit-transition:0.5s ease;
+		transition:0.5s ease;
+		margin:20px;
+		}
+
+		a:hover {
+		border-width:0;
+		border-color:rgba(0,0,0,0.5);
+		}
+
+		a.one {border-style:solid;}
+		a.two {border-style:dashed;}
+		a.san {border-style:dotted;}
+
+
+		a.yon {border:50px solid rgba(0,0,0,0.7);}
+		a.goo {border:50px dashed rgba(0,0,0,0.7);}
+		a.rok {border:50px dotted rgba(0,0,0,0.7);}
+		a.ryk {border:50px double rgba(0,0,0,0.7);}
+		a.yon:hover {border: 1px solid rgba(0,0,0,0.7);}
+		a.goo:hover {border: 1px dashed rgba(0,0,0,0.7);}
+		a.rok:hover {border: 1px dotted rgba(0,0,0,0.7);}
+		a.ryk:hover {border: 1px double rgba(0,0,0,0.7);}
+
+
+		a.x7,
+		a.x8,
+		a.x9 {
+		-webkit-border-radius:0;
+		-moz-border-radius:0;
+		border-radius:0;
+		}
+		a.x7 {border:50px solid rgba(0,0,0,0.7);}
+		a.x8 {border:50px dashed rgba(0,0,0,0.7);}
+		a.x9 {border:50px dotted rgba(0,0,0,0.7);}
+		a.x7:hover {border: 1px double rgba(0,0,0,0.7);}
+		a.x8:hover {border: 1px dashed rgba(0,0,0,0.7);}
+		a.x9:hover {border: 1px dotted rgba(0,0,0,0.7);}
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">ANIMACIONES</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">DEGRADADOS</a></li>
+				<li><a href="transformaciones.html">TRANSFORMACIONES</a></li>
+				<li><a href="transiciones.html">TRANSICIONES</a></li>
+				<li><a href="etiquetas.html">ETIQUETAS </a></li>
+			</ul>
+		</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>ANIMACIONES en CSS3</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+								<div align="center"><img src="images/5.png"/ align=center>	</div>
+						<p>	Animaciones CSS son una alternativa más poderosa que las transiciones. En vez de confiar en el secuencia de un estado inicial a un estado final, las animaciones pueden tener cuantos estados se necesiten en medio del estado inicial y el estado final, ofreciendo un mayor control de cómo los estados son animados.
+								Mientras una transición se mueve de un estado A a un estado B, una animación puede moverse de A, B, C a D. O puede tener la cantidad de estados que necesite.
+								Las animaciones pueden lograr este comportamiento utilizando una colección de keyframes. Mientras una transición puede ser especificada con una línea de de código en una clase, una animación requiere un conjunto de keyframes que son descritos separados de la clase.</p>
+						</header>
+
+						<H2>PROPIEDADES</H2><br />
+
+				<table class="cheatsheet referencia">
+<thead>
+	<tr>
+		<th>Propiedad</th>
+		<th>Sintaxis</th>
+		<th>Descripci&oacute;n</th>
+		</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>@keyframes</td>
+		<td>@keyframes nombre_animacion<br />
+			{ keyframes-selector {css-styles;}<br />
+			}</td>
+		<td>Con @keyframes podemos crear animaciones</td>
+		</tr>
+	<tr>
+		<td>animation</td>
+		<td>animation: name duration timing-function delay iteration-count direction fill-mode play-state;</td>
+		<td>Establece todas las propiedades de la animaci&oacute;n en una sola declaraci&oacute;n abreviada</td>
+		</tr>
+	<tr>
+		<td>animation-delay</td>
+		<td>animation-delay: tiempo en segundos o milisegundos;</td>
+		<td>Define cuando la animaci&oacute;n se iniciar&aacute;</td>
+		</tr>
+	<tr>
+		<td>animation-direction</td>
+		<td>animation-direction: normal | reverse | alternate | alternate-reverse;</td>
+		<td>Define si la animaci&oacute;n debe reproducirse hacia atr&aacute;s o en ciclos alternos</td>
+		</tr>
+	<tr>
+		<td>animation-duration</td>
+		<td>animation-duration: tiempo en segundos o milisegundos;</td>
+		<td>Define el n&uacute;mero de segundos o milisegundos que la animaci&oacute;n tarda en realizarse</td>
+		</tr>
+	<tr>
+		<td>animation-fill-mode</td>
+		<td>animation-fill-mode: none|forwards|backwards|both;</td>
+		<td>Especifica como debe comportarse el elemento cuando la animaci&oacute;n esta en pausa.<br />
+			Si <code>animation-fill-mode: none</code>, el elemento vuelve al punto de partida.
+			Si<code> animation-fill-mode: forwards</code> el elemento se queda en el punto donde acab&oacute; la animaci&oacute;n.
+		</td>
+		</tr>
+	<tr>
+		<td>animation-iteration-count</td>
+		<td>animation-iteration-count: n veces | infinite;</td>
+		<td>Define cu&aacute;ntas veces hay que reproducir la animaci&oacute;n.</td>
+		</tr>
+	<tr>
+		<td>animation-name</td>
+		<td>animation-name: nombre_animacion | none;</td>
+		<td>Especifica un nombre para la animaci&oacute;n de @keyframes</td>
+		</tr>
+	<tr>
+		<td>animation-timing-function</td>
+		<td>animation-timing-function: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n)</td>
+		<td>Especifica la curva de velocidad de la animaci&oacute;n</td>
+		</tr>
+	<tr>
+		<td>animation-play-state</td>
+		<td>animation-play-state: paused | running;</td>
+		<td>El estado de la animaci&oacute;n. Especifica si la animaci&oacute;n est&aacute; en ejecuci&oacute;n o en pausa</td>
+		</tr>
+</tbody>
+</table>
+
+						<h2>EJEMPLO</h2>
+
+						<video src="images/banner.mp4"> </video>
+
+
+			</section>
+
+		<!-- Footer -->
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

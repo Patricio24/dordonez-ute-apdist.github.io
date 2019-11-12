@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html>
+	<head>
+		<title>TRANSICIONES CSS3</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+		*{margin:0; padding:0; font-family: sans-serif;}
+		.bloquePub{ border: 5px solid; width: 260px;
+		margin:60px 0 0 90px; background-color:white;
+		font-size: 20px; text-align:center;
+		padding-top: 20px; word-wrap:break-word;
+		transition-property: color, transform;
+		transition-duration: 6s, 4s;
+		transition-timing-function: ease;
+		transition-delay: 2s, 0s;
+		}
+
+		.bloquePub:hover {color: red; transform:rotate(360deg);}
+		img {padding:10px; }
+		}
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">TRANSICIONES</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">DEGRADADOS</a></li>
+				<li><a href="transformaciones.html">TRANSFORMACIONES</a></li>
+				<li><a href="transiciones.html">TRANSICIONES</a></li>
+				<li><a href="etiquetas.html">ETIQUETAS </a></li>
+			</ul>
+		</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Transiciones en CSS3</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+								<div align="center"><img src="images/5.png"/ align=center>	</div>
+						<p>	Una transición CSS es un efecto de cambio progresivo desde un estado inicial hasta un estado final de un elemento.
+							En el estado inicial el elemento tiene unas propiedades y en el estado final tiene una o varias propiedades que han cambiado.
+							 El navegador se encarga de generar los pasos intermedios que suponen cambiar de un estado a otro, de la forma que especifiquemos a través del código.
+							Una transición CSS empieza cuando se produce una situación de “disparo” del cambio. El disparo del cambio puede ser generado de distintas maneras, pero la forma más básica y la que vamos a ver en los ejemplos que pondremos a continuación es que el cambio empieza cuando el usuario pone el ratón encima del elemento HTML afectado por la transición, es decir, que usamos la pseudoclase :hover para definir la transición que empieza cuando el usuario pone el puntero del mouse encima del elemento.</p>
+						</header>
+						<b>PROPIEDAD TRANSITION-PROPERTY</b><br />
+						<center>
+		<table border="1" cellpadding="7" cellspacing="0">
+			<thead>
+				<tr style="background-color: rgb(204, 204, 204);">
+					<td colspan="2" style="text-align: center;">
+						<b>PROPIEDAD CSS transition-property</b></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<b>Funci&oacute;n de la propiedad</b></td>
+								<td>
+									Permite definir qu&eacute; elementos van a ser afectados por una transici&oacute;n.</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Valor por defecto</b></td>
+								<td>
+									all</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Aplicable a</b></td>
+								<td>
+									Todos los elementos.</td>
+							</tr>
+							<tr>
+								<td rowspan="4">
+									<b>Valores posibles para esta propiedad</b></td>
+								<td>
+									<strong>all </strong>(indica que se ver&aacute;n afectadas por la transici&oacute;n todas las propiedades que se pueda)</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>none </strong>(indica que no se aplicar&aacute; la transici&oacute;n a ninguna propiedad)</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>nombreDeLaPropiedad</strong> (indicando un nombre de propiedad se especifica la propiedad que se va a ver afectada; si son varias, separarlas con comas.)</td>
+							</tr>
+							<tr>
+								<td>
+									<b>inherit</b> (se heredan las caracter&iacute;sticas del elemento padre).</td>
+							</tr>
+						</tbody>
+					</table>
+				</center>
+
+						<b>PROPIEDAD TRANSITION-DURATION</b></td>
+						<p>
+							Su valor por defecto es 0 (esto equivale a que no habrá transición). En caso de que haya varias propiedades afectadas, los tiempos se especifican separados por comas y se asocian a cada propiedad en el mismo orden en que los define la propiedad transition-property.
+							Ejemplo: transition-property: color, transform; transition-duration: 10s, 4s;
+						</p>
+
+						<b>PROPIEDAD TRANSITION-DELAY</b></td>
+						<p>
+							Esta propiedad sirve para especificar cuál tiene que ser el retardo con el que empiece la transición en segundos (s) o en milisegundos (ms), a partir del momento en que se produzca la situación “de disparo”. Su valor por defecto es 0 (esto equivale a que la transición comenzará inmediatamente cuando se produzca la situación de disparo). En caso de que haya varias propiedades afectadas, los tiempos se especifican separados por comas y se asocian a cada propiedad en el mismo orden en que los define la propiedad transition-property. Ejemplo:
+
+						transition-property: color, transform; transition-delay: 2s, 0s;
+						</p>
+
+						<b>PROPIEDAD TRANSITION-TIMING-FUNCTION</b></td>
+
+										<center>
+						<table border="1" cellpadding="7" cellspacing="0">
+							<thead>
+								<tr style="background-color: rgb(204, 204, 204);">
+									<td colspan="2" style="text-align: center;">
+										<b>PROPIEDAD CSS transition-timing-function</b></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<b>Funci&oacute;n de la propiedad</b></td>
+									<td>
+										Permite definir la velocidad a la que transcurre la transici&oacute;n respetando la duraci&oacute;n establecida. A efectos pr&aacute;cticos, permite que el usuario vea la animaci&oacute;n como progresiva a velocidad constante o con cierta aceleraci&oacute;n.</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Valor por defecto</b></td>
+									<td>
+										ease</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Aplicable a</b></td>
+									<td>
+										Todos los elementos.</td>
+								</tr>
+								<tr>
+									<td rowspan="10">
+										<b>Valores posibles para esta propiedad</b></td>
+									<td>
+										<strong>ease</strong>: comienzo r&aacute;pido, luego velocidad constante y final lento.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>ease-in</strong>: al rev&eacute;s que ease.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>ease-out</strong>: similar a ease con final a velocidad constante.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>ease-in-out</strong>: comienzo lento y progresi&oacute;n a velocidad constante.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>linear</strong>: progresi&oacute;n a velocidad constante.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>step-start</strong>: salto de la situaci&oacute;n inicial a la final al comienzo.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>step-end</strong>: salto de la situaci&oacute;n inicial a la final al final.</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>steps </strong>(numeroDePasos, end) [El par&aacute;metro numeroDePasos establece el n&uacute;mero de pasos intermedios entre la situaci&oacute;n inicial y la final, lo que equivale a que la transici&oacute;n se vea como &ldquo;peque&ntilde;os saltos&rdquo;.]</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>cubic-bezier</strong>(valor0a1, valor0a1, valor0a1, valor0a1) [Esta forma de definici&oacute;n permite especificar la curva temporal de forma matem&aacute;tica para definir formas de cambio personalizadas]</td>
+								</tr>
+								<tr>
+									<td>
+										<b>inherit</b> (se heredan las caracter&iacute;sticas del elemento padre).</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</center>
+
+
+						<h2>EJEMPLO</h2>
+
+						<div id="mainCont" style="border-style:none; border-width:0; background-color:white;">
+						<div class="bloquePub" style="border-radius: 40px;"> <img src="images/3.png" alt="Notepad++" ></a></div>
+						</div>
+
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
