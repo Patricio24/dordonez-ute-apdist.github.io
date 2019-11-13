@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sincronización de hilos en Java</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">ETIQUETAS</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">DEGRADADOS</a></li>
+				<li><a href="transformaciones.html">TRANSFORMACIONES</a></li>
+				<li><a href="transiciones.html">TRANSICIONES</a></li>
+				<li><a href="etiquetas.html">ETIQUETAS </a></li>
+			</ul>
+		</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>ETIQUETAS HTML</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+								<div align="center"><img src="images/video.jpg"/ align=center>	</div>
+
+						</header>
+
+						<H2>PROPIEDADES</H2><br />
+
+						<p>HTML5 introduce soporte integrado para el contenido multimedia gracias a los elementos <a href="/es/docs/Web/HTML/Elemento/audio" title="El elemento audio se usa para insertar contenido de audio en un documento HTML o XHTML. El elemento audio se agregó como parte de HTML 5."><code>&lt;audio&gt;</code></a> y <a href="/es/docs/Web/HTML/Elemento/video" title="El elemento video se utiliza para incrustar vídeos en un documento HTML o XHTML."><code>&lt;video&gt;</code></a>, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML.</p>
+
+ <h2 id="Insertando_contenido_multimedia">Insertando contenido multimedia</h2>
+
+ <p>Insertar contenido multimedia en tus documentos HTML es muy sencillo:</p>
+
+ <div style="overflow: hidden;">
+ <pre class="brush: html">&lt;video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls&gt;
+   Tu navegador no implementa el elemento &lt;code&gt;video&lt;/code&gt;.
+ &lt;/video&gt;</pre>
+
+ <p>Este ejemplo reproduce un vídeo de ejemplo, con los controles de reproducción, desde el sitio Web de Theora.</p>
+
+ <p>Este es un ejemplo para insertar <em>audio</em> en tu documento HTML</p>
+
+ <pre class="brush: html">&lt;audio src="/test/audio.ogg"&gt;
+ &lt;p&gt;Tu navegador no implementa el elemento audio.&lt;/p&gt;
+ &lt;/audio&gt;</pre>
+ </div>
+
+ <p>El atributo <code>src</code> puede ser una URL del archivo de audio o la ruta al archivo en el sistema local.</p>
+
+ <div style="overflow: hidden;">
+ <pre class="brush: html">&lt;audio src="audio.ogg" controls autoplay loop&gt;
+ &lt;p&gt;Tu navegador no implementa el elemento audio&lt;/p&gt;
+ &lt;/audio&gt;</pre>
+ </div>
+
+ <p>Este código de ejemplo usa los atributos del elemento <a href="/es/docs/Web/HTML/Elemento/audio" title="El elemento audio se usa para insertar contenido de audio en un documento HTML o XHTML. El elemento audio se agregó como parte de HTML 5."><code>&lt;audio&gt;</code></a>:</p>
+
+ <ul>
+  <li><code>controls</code> : muestra los controles estándar de HTML5 para audio en una página web.</li>
+  <li><code>autoplay</code> : hace que el audio se reproduzca automáticamente.</li>
+  <li><code>loop</code> : hace que el audio se repita automáticamente.</li>
+ </ul>
+
+ <div style="overflow: hidden;">
+ <pre class="brush: html">&lt;audio src="audio.mp3" preload="auto" controls&gt;&lt;/audio&gt;</pre>
+ </div>
+
+ <p>El atributo <code>preload</code> es usado en el elemento audio para almacenar temporalmente (buffering) archivos de gran tamaño. Este puede tomar uno de 3 valores:</p>
+
+ <ul>
+  <li><code>"none"</code> no almacena temporalmente el archivo</li>
+  <li><code>"auto"</code> almacena temporalmente el archivo multimedia</li>
+  <li><code>"metadata"</code> almacena temporalmente sólo los metadatos del archivo</li>
+ </ul>
+
+ <p>Se pueden especificar múltiples fuentes de archivos usando el elemento <a href="/es/docs/Web/HTML/Elemento/source" title="El elemento HTML &lt;source>  especifica recursos de medios múltiples para los elementos &lt;picture>, &lt;audio>, o &lt;video>. Es un elemento vacío. Normalmente se utiliza para servir el mismo contenido multimedia en varios formatos soportados por diferentes navegadores."><code>&lt;source&gt;</code></a> <span lang="es" id="result_box"><span class="hps">con el fin de</span> <span class="hps">proporcionar vídeo</span> <span class="hps">o</span> <span class="hps">audio</span> <span class="hps">codificados en formatos</span> <span class="hps">diferentes</span> <span class="hps">para</span> <span class="hps">diferentes navegadores</span></span>. Por ejemplo:</p>
+
+ <pre class="brush: html">&lt;video controls&gt;
+   &lt;source src="foo.ogg" type="video/ogg"&gt;
+   &lt;source src="foo.mp4" type="video/mp4"&gt;
+   Tu navegador no implementa el elemento &lt;code&gt;video&lt;/code&gt;.
+ &lt;/video&gt;
+ </pre>
+
+ <p>Esto reproduce el archivo Ogg en navegadores que admiten el formato Ogg. Si el navegador no admite Ogg, el navegador usará el archivo MPEG-4. Mira también la lista de <a href="/en-US/docs/Media_formats_supported_by_the_audio_and_video_elements" title="Media formats supported by the audio and video elements">los formatos multimedia admitidos por los elementos audio y video</a> en los diferentes navegadores.</p>
+
+ <p>También puedes especificar qué codecs requiere el archivo multimedia; de esta forma el navegador tomará decisiones más inteligentes:</p>
+
+ <pre class="brush: html">&lt;video controls&gt;
+   &lt;source src="foo.ogg" type="video/ogg; codecs=dirac, speex"&gt;
+   Tu navegador no implementa el elemento &lt;code&gt;video&lt;/code&gt;.
+ &lt;/video&gt;</pre>
+
+ <p>Aquí, especificamos que el vídeo usa los codecs Dirac y Speex. Si el navegador implementa Ogg, pero no los codecs especificados, el vídeo no será cargado.</p>
+
+ <p>Si el atributo <code>type</code> no está especificado, el tipo de contenido multimedia se obtiene del servidor <span lang="es" id="result_box"><span class="hps">y</span> se <span class="hps">comprueba para</span> <span class="hps">ver</span> <span class="hps">si el navegador</span> <span class="hps">lo puede manejar</span></span>; si no puede ser mostrado, se comprueba el siguiente <code>source</code> , si ninguno de los elementos <code>source</code> especificados pueden ser usados, un evento de <code>error</code> es enviado al elemento <code>video</code>. Si el atributo <code>type</code> está especificado, es comparado con los tipos que el navegador puede reproducir, y si no es reconocido, no se hace la consulta al servidor; en su lugar, el siguiente <code>source</code> se comprueba una vez.</p>
+
+ <p>Mira <a href="/en-US/docs/DOM/Media_events" title="https://developer.mozilla.org/en/DOM/Media_events">los eventos del contenido multimedia</a> para una lista completa de eventos asociados con la producción multimedia. Para detalles en los formatos multimedia soportados por los diferentes navegadores, mira <a href="/en-US/docs/Media_formats_supported_by_the_audio_and_video_elements" title="Media formats supported by the audio and video elements">los formatos multimedia sportados por los elementos audio y video</a>.</p>
+
+ <h2 id="Controlando_la_reproducción_multimedia">Controlando la reproducción multimedia</h2>
+
+ <p>Una vez que has incrustado el contenido multimedia en tu documento HTML usando los nuevos elementos, puedes controlarlos mediante programación en JavaScript. Por ejemplo, para iniciar (o reiniciar) la reproducción, puedes hacer esto:</p>
+
+ <pre class="brush: js">var v = document.getElementsByTagName("video")[0];
+ v.play();
+ </pre>
+
+ <p>La primera línea obtiene el primer elemento video en el documento, y la segunda línea llama al método <a href="/en-US/docs/XPCOM_Interface_Reference/NsIDOMHTMLMediaElement#play()" title="nsIDOMHTMLMediaElement#play()"><code>play()</code></a> del elemento, como está definido en la interfaz <code><a rel="nofollow" href="/es/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIDOMHTMLMediaElement" class="new" title="">nsIDOMHTMLMediaElement</a></code> que es usada para implementar los elementos multimedia.</p>
+
+ <p>Controlar un reproductor de audio en HTML5 para reproducir, pausar, aumentar y disminuir el volumen usando algo de Javascript es muy sencillo.</p>
+
+ <pre class="brush: html">&lt;audio id="demo" src="audio.mp3"&gt;&lt;/audio&gt;
+ &lt;div&gt;
+   &lt;button onclick="document.getElementById('demo').play()"&gt;Reproducir el Audio&lt;/button&gt;
+   &lt;button onclick="document.getElementById('demo').pause()"&gt;Pausar el Audio&lt;/button&gt;
+   &lt;button onclick="document.getElementById('demo').volume+=0.1"&gt;Aumentar el Volumen&lt;/button&gt;
+   &lt;button onclick="document.getElementById('demo').volume-=0.1"&gt;Disminuir el Volumen&lt;/button&gt;
+ &lt;/div&gt;
+ </pre>
+
+ <h2 id="Deteniendo_la_descarga_de_contenido_multimedia">Deteniendo la descarga de contenido multimedia</h2>
+
+ <p>Mientras que detener la reproducción multimedia es tan fácil como llamar al método pause() del elemento, el navegador sigue descargando el contenido multimedia hasta que el elemento multimedia es eliminado <span lang="es" id="result_box"><span class="hps">a través de</span> <span class="hps">la recolección de basura</span></span>.</p>
+
+ <p>Aquí un truco para detener la descarga de una sola vez:</p>
+
+ <pre class="brush: js">var mediaElement = document.getElementById("myMediaElementID");
+ mediaElement.pause();
+ mediaElement.src = "";
+ </pre>
+
+ <p>Estableciendo una cadena vacía al atributo <code>src</code> del elemento multimedia, tu destruyes el decodificador interno del elemento con lo que detienes la descarga.</p>
+
+ <h2 id="Buscando_a_través_de_los_medios" style="margin: 0px 0px 0.8em; padding: 0px;">Buscando a través de los medios</h2>
+
+ <p style="margin: 0px 0px 1.286em; padding: 0px; line-height: 1.5em;"><font>Los elementos de los medios proporcionan apoyo para mover la posición de reproducción actual a puntos específicos en el contenido de los medios. </font>Esto se hace estableciendo el valor de la propiedad <code style="font-size: 14px;">horaActual</code> en el elemento; ver <a href="https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement" class="new" title="/ Es / docs / Web / API / HTMLMediaElement"><code style="font-size: 14px;">HTMLMediaElement</code></a> para más detalles sobre las propiedades del elemento. Basta con establecer el valor en el tiempo, en segundos, con el que desea reproducir para continuar.</p>
+
+ <p><span style="line-height: 1.5em;">Usted puede utilizar el elemento </span><code style="font-size: 14px;">seekable</code><span style="line-height: 1.5em;"> propiedad para determinar los rangos de los medios de comunicación que están disponibles para la búsqueda de la actualidad. Esto devuelve un objeto </span><a rel="nofollow" href="https://developer.mozilla.org/es/docs/Web/API/TimeRanges" class="new" style="line-height: 1.5em;" title="/ Es / docs / Web / API / TimeRanges"><code style="font-size: 14px;">TimeRanges</code></a><span style="line-height: 1.5em;"> que enumera los rangos de veces que se puede tratar de:</span></p>
+
+ <pre class="brush: js">var mediaElement = document.getElementById('mediaElementID');
+ mediaElement.seekable.start();  // Returns the starting time (in seconds)
+ mediaElement.seekable.end();    // Returns the ending time (in seconds)
+ mediaElement.currentTime = 122; // Seek to 122 seconds
+ mediaElement.played.end();      // Returns the number of seconds the browser has played
+ </pre>
+
+ <h2 id="Especificación_del_rango_de_reproducción" style="margin: 0px 0px 0.8em; padding: 0px;"><font>Especificación del rango de reproducción</font></h2>
+
+ <p style="margin: 0px 0px 1.286em; padding: 0px; line-height: 1.5em;">Al especificar el URI de los medios de comunicación para un elemento <a href="https://developer.mozilla.org/es/docs/HTML/Elemento/audio"><code style="font-size: 14px;">&lt;audio&gt;</code></a> o <a href="https://developer.mozilla.org/es/docs/HTML/Elemento/video"><code style="font-size: 14px;">&lt;video&gt;</code></a> , puede incluir opcionalmente información adicional para especificar la parte de los medios a reproducir. Para ello, añada una almohadilla ("#"), seguida de la descripción del fragmento de medios.</p>
+
+ <p><span style="line-height: 1.5em;">Un intervalo de tiempo se especifica mediante la sintaxis:</span></p>
+
+ <pre>#t=[starttime][,endtime]</pre>
+
+ <p style="margin: 0px 0px 1.286em; padding: 0px; line-height: 1.5em;"><font>El tiempo se puede especificar como un número de segundos (como un valor de punto flotante) o como una hora / minuto / segundo tiempo separado con dos puntos (por ejemplo, 2:05:01 durante 2 horas, 5 minutos y 1 segundo).</font></p>
+
+ <p style="margin: 0px 0px 1.286em; padding: 0px; line-height: 1.5em;">Algunos ejemplos:</p>
+
+
+						<h2>EJEMPLO</h2>
+						<h3>VIDEO</h3><br />
+
+						<video src="images/banner.mp4" controls></video>
+
+						<h3>AUDIO</h3><br />
+						<audio src="images/music.mp4" controls autoplay loop></audio>
+
+			</section>
+
+		<!-- Footer -->
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
