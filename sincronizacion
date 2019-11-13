@@ -47,16 +47,31 @@
 
 						<H2>Introducción</H2><br />
 
-						<p>Al usar múltiples hilos, a veces es necesario coordinar las actividades de dos o más. El proceso por el cual esto se logra se llama sincronización (synchronization). La razón más común para la sincronización es cuando dos o más hilos necesitan acceso a un recurso compartido que solo puede ser utilizado por un hilo a la vez.<a href="/es/docs/Web/HTML/Elemento/audio" title="El elemento audio se usa para insertar contenido de audio en un documento HTML o XHTML. El elemento audio se agregó como parte de HTML 5."><code>&lt;audio&gt;</code></a> y <a href="/es/docs/Web/HTML/Elemento/video" title="El elemento video se utiliza para incrustar vídeos en un documento HTML o XHTML."><code>&lt;video&gt;</code></a>, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML.</p>
+						<p>Al usar múltiples hilos, a veces es necesario coordinar las actividades de dos o más. El proceso por el cual esto se logra se llama sincronización (synchronization). La razón más común para la sincronización es cuando dos o más hilos necesitan acceso a un recurso compartido que solo puede ser utilizado por un hilo a la vez.
+						Por ejemplo, cuando un hilo está escribiendo en un archivo, se debe evitar que un segundo hilo lo haga al mismo tiempo. Otra razón para la sincronización es cuando un hilo está esperando un evento causado por otro hilo. En este caso, debe haber algún medio por el cual el primer hilo se mantenga en estado suspendido hasta que ocurra el evento. Entonces, el hilo de espera debe reanudar la ejecución.
+						</p>
 
- <h2 id="Insertando_contenido_multimedia">Insertando contenido multimedia</h2>
+ <h2 id="Insertando_contenido_multimedia">Conceptos de Sincronización</h2>
 
- <p>Insertar contenido multimedia en tus documentos HTML es muy sencillo:</p>
+ <p>La clave para la sincronización en Java es el concepto de monitor, que controla el acceso a un objeto. 
+ Un monitor funciona implementando el concepto de bloqueo (lock). Cuando un objeto está bloqueado por un hilo, ningún otro hilo puede obtener acceso al objeto. 
+ Cuando el hilo sale, el objeto está desbloqueado y está disponible para ser utilizado por otro hilo.</p>
+ 
+ 
+ <p>Todos los objetos en Java tienen un monitor. Esta característica está integrada en el lenguaje Java en sí. 
+ Por lo tanto, todos los objetos se pueden sincronizar. La sincronización está respaldada por la palabra clave synchronized y algunos métodos bien definidos que tienen todos los objetos. 
+ Como la sincronización se diseñó en Java desde el principio, es mucho más fácil de usar de lo que se podría esperar. 
+ De hecho, para muchos programas, la sincronización de objetos es casi transparente.
+ </p>
+ 
+ <h3>Hay dos formas de sincronizar tu código. Ambos implican el uso de la palabra clave synchronized, y ambos se examinan a continuación. </h3>
+ 
+ 
 
- <div style="overflow: hidden;">
+ "<div style="overflow: hidden;">
  <pre class="brush: html">&lt;video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls&gt;
    Tu navegador no implementa el elemento &lt;code&gt;video&lt;/code&gt;.
- &lt;/video&gt;</pre>
+ &lt;/video&gt;</pre>"
 
  <p>Este ejemplo reproduce un vídeo de ejemplo, con los controles de reproducción, desde el sitio Web de Theora.</p>
 
