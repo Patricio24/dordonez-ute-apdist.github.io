@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>Creación de hilos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+  <!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Universidad UTE</a><img src="images/logo2.png" height="80px" width="160px"/>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+	
+	<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Introducción a las Aplicaciones distribuidas</a></li>
+					<li><a href="transformaciones.html">Aplicaciones distribuidas en la vida real</a></li>
+					<li><a href="crear_hilos.html">Hilos simples y heredados</a></li>
+					<li><a href="transiciones.html">Ejecutores</a></li>
+					<li><a href="etiquetas.html">Sincronización</a></li>
+				</ul>
+			</nav>
+			
+	<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>APLICACIONES DISTRIBUIDAS</h1>
+					<!--<p>Audio, imagen, video, transiciones y animaciones.</p>-->
+				</div>
+				<video autoplay loop muted playsinline src="images/ute.mp4"></video>
+			</section>
+	
+	<section class="wrapper">
+		<div class="inner">
+			<h1>Creación de hilos</h1>
+			<h3>En Java los hilos están encapsulados en la clase Thread. Para crear un hilo tenemos dos posibilidades:</h3>
+			<h2 style="color:#FF0000";>Extender Thread</h2>
+			<ul>
+				<li>Crea una clase T que extiende de Thread</li>
+				<li>Sobreescribir el metodo run()</li>
+				<ul>
+					<li>Incluir ahi el codigo que debe ejecutarse en el nuevo hilo</li>
+				</ul>
+				<h1><img src="images/ejemplo extends 1.png"></h1>
+				<li>Crear una instancia t de T</li>
+				<li>Ejecutar t.start()</li>
+				<h1><img src="images/ejemplo extends 2.png"></h1>
+				<ul>
+					<li>Se crea un nuevo hilo (path de ejecucion)</li>
+					<li>Dentro de dicho hilo se ejecuta run()</li>
+					<li>Al finalizar run(), finaliza hilo</li>
+				</ul>
+			</ul>
+			<h3>Crear un hilo heredando o Extender Thread tiene el problema de que al no haber herencia múltiple en Java, si heredamos de Thread no podremos heredar de ninguna otra clase, y por lo tanto un hilo no podría heredar de ninguna otra clase.</h3>
+			<h2 style="color:#FF0000";>Implementar Runnable</h2>
+			<ul>
+				<li>Crea una clase R que implemente Runnable</li>
+				<li>Sobreescribe el metodo run()</li>
+				<ul>
+					<li>Incluir ahi el codigo que debe ejecutarse en el nuevo hilo</li>
+				</ul>
+				<h1><img src="images/ejemplo implements 1.png"></h1>
+				<li>Crear una instancia r de R</li>
+				<li>Pasar r al constructor de una instancia t de Thread: Thread t=new Thread(r);</li>
+				<li>Ejecutar t.start()</li>
+				<h1><img src="images/ejemplo implements 2.png"></h1>
+				<ul>
+					<li>Se crea un nuevo hilo (path de ejecucion)</li>
+					<li>Dentro de dicho hilo se ejecuta run()</li>
+					<li>Al finalizar run(), finaliza hilo</li>
+				</ul>
+			</ul>
+			<br>
+			<h2 style="color:#FF0000";>!!!En ambos casos debemos definir un método run() que será el que contenga el código del hilo!!!</h2>
+		</div>
+	</section>
+  </body>
+  <!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+
+							<h4>Universidad UTE &copy 2019</h4>
+
+						</section>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+</html>
