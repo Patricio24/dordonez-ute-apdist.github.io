@@ -45,9 +45,9 @@
 
 						</header>
 
-						<H2>PROPIEDADES</H2><br />
+						<H2>Introducción</H2><br />
 
-						<p>HTML5 introduce soporte integrado para el contenido multimedia gracias a los elementos <a href="/es/docs/Web/HTML/Elemento/audio" title="El elemento audio se usa para insertar contenido de audio en un documento HTML o XHTML. El elemento audio se agregó como parte de HTML 5."><code>&lt;audio&gt;</code></a> y <a href="/es/docs/Web/HTML/Elemento/video" title="El elemento video se utiliza para incrustar vídeos en un documento HTML o XHTML."><code>&lt;video&gt;</code></a>, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML.</p>
+						<p>Al usar múltiples hilos, a veces es necesario coordinar las actividades de dos o más. El proceso por el cual esto se logra se llama sincronización (synchronization). La razón más común para la sincronización es cuando dos o más hilos necesitan acceso a un recurso compartido que solo puede ser utilizado por un hilo a la vez.<a href="/es/docs/Web/HTML/Elemento/audio" title="El elemento audio se usa para insertar contenido de audio en un documento HTML o XHTML. El elemento audio se agregó como parte de HTML 5."><code>&lt;audio&gt;</code></a> y <a href="/es/docs/Web/HTML/Elemento/video" title="El elemento video se utiliza para incrustar vídeos en un documento HTML o XHTML."><code>&lt;video&gt;</code></a>, ofreciendo la posibilidad de insertar contenido multimedia en documentos HTML.</p>
 
  <h2 id="Insertando_contenido_multimedia">Insertando contenido multimedia</h2>
 
